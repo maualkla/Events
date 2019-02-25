@@ -13,14 +13,4 @@ import java.sql.SQLException;
  */
 public class ConnectDB 
 {
-            public static Connection conecta() throws SQLException, ClassNotFoundException
-            {
-                Connection conecta = null;
-                Class.forName("com.mysql.jdbc.Driver");
-                String servidor = "127.0.0.1";
-                String usuario = "root";
-                String contra = "";
-                conecta =  (Connection)DriverManager.getConnection(servidor, usuario, contra);
-                return conecta;
-            }
 }
