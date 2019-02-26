@@ -4,6 +4,8 @@
     Author     : Mauricio E Alcala Lopez
 --%>
 
+<%@page import="java.sql.Connection"%>
+<%@page import="PackageEvt1.ConnectDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +17,18 @@
         </style>
     </head>
     <body>
+        <%
+        ConnectDB db = new ConnectDB();
+        Connection conn = db.getConnection();
+        if(conn!=null)
+        {
+                 out.print("Connection successfully");
+        }
+        else
+        {
+                 out.print("Connection failed");
+        }
+        %>
         <h1>Events Main Content</h1>
     </body>
 </html>

@@ -10,5 +10,9 @@ package PackageEvt1;
  * @author mauri
  */
 class ClassNotFoundExeption {
+
+    boolean getMessage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
