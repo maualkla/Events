@@ -17,6 +17,9 @@
         </style>
     </head>
     <body>
+        
+        <h1>Events Main Content</h1>
+        
         <%
         ConnectDB db = new ConnectDB();
         Connection conn = db.getConnection();
@@ -29,6 +32,5 @@
                  out.print("Connection failed");
         }
         %>
-        <h1>Events Main Content</h1>
     </body>
 </html>
