@@ -23,6 +23,8 @@
         <%
         ConnectDB db = new ConnectDB();
         Connection conn = db.getConnection();
+        out.print(conn);
+        out.print(" ---- ");
         if(conn!=null)
         {
                  out.print("Connection successfully");
