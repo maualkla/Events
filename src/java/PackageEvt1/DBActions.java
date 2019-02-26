@@ -83,4 +83,23 @@ public class DBActions {
                 }
                  return success;
             }
+            public boolean updateStudent(Connection conn, Integer id, String name, String address){
+                boolean success = false;
+                try {    
+                    String query = "update students set name = ?, address = ? where idStudents = ?";
+
+                    PreparedStatement preparedStmt = conn.prepareStatement(query);
+                    preparedStmt.setString(1, name);
+                    preparedStmt.setString(2, address);
+                    preparedStmt.setInt(3, id);
+                    // execute the preparedstatement
+                    preparedStmt.execute();
+                   success = true;
+                   conn.close();
+                } catch (SQLException ex) {
+                    success = false;
+                    Logger.getLogger(DBActions.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                 return success;
+            }
 }
