@@ -109,4 +109,26 @@ public class DBActions {
                 }
                  return success;
             }
+            
+            public ResultSet foudTable(Connection conn, String mesa)
+            {
+                try
+                {
+                    Statement st = conn.createStatement();
+                    ResultSet  mesas ;
+                     String query =  "Select * from mesas where nombre = ? ";
+                    PreparedStatement preparedStmt = conn.prepareStatement(query);
+                    preparedStmt.setString(1, mesa);
+                    
+
+                    // execute the preparedstatement
+                    mesas = st.preparedStmt.execute();
+                     return mesas;
+                }
+                catch(SQLException ex)
+                {
+                    Logger.getLogger(DBActions.class.getName()).log(Level.SEVERE, null, ex);
+                    return null;
+                }
+            }
 }

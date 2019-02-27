@@ -17,6 +17,7 @@
         <style>
             body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}
             .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
+            
         </style>
     </head>
     <body>
@@ -39,7 +40,7 @@
        </div>
        <div class="content">
            <div class="c-input">
-               <form name="check" action="" method="">
+               <form name="check" action="searchTable.jsp" method="POST">
                    <input type="text" name="id" value="" class="c-input">
                    <input type="submit" name="enviar" value="Buscar Mesa" class="boton">
                </form>
