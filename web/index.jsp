@@ -14,17 +14,16 @@
         <title>Events Main</title>
         <style>
             body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}
+            .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
         </style>
     </head>
     <body>
         
         <h1>Events Main Content</h1>
         
-        <%
+       <div class="conexion_status"> <%
         ConnectDB db = new ConnectDB();
         Connection conn = db.getConnection();
-        out.print(conn);
-        out.print(" ---- ");
         if(conn!=null)
         {
                  out.print("Connection successfully");
@@ -34,5 +33,18 @@
                  out.print("Connection failed");
         }
         %>
+       </div>
+       <div class="content">
+           <div class="c-input">
+               <form name="check" action="" method="">
+                   <input type="text" name="id" value="" class="c-input">
+                   <input type="submit" name="enviar" value="Buscar Mesa" class="boton">
+               </form>
+           </div>
+           <div class="c-options">
+               <button> Nuevo Invitado </button>
+               <button> Eliminar Invitado </button>
+           </div>
+       </div>
     </body>
 </html>
