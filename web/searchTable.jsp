@@ -4,6 +4,7 @@
     Author     : mauri
 --%>
 
+<%@page import="java.awt.SystemColor.info"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="PackageEvt1.DBActions"%>
 <%@page import="java.sql.Connection"%>
@@ -24,27 +25,37 @@
     <body>
         <% 
            String parameter = request.getParameter("id");
-           DBActions db = new DBActions();
-           Connection conn = db.getConnection();
-           if(conn==null)
-           {
-                   out.print("Connection failed");
-           }
-           else
-           {
-               out.print(" Yeah!");
-           }
-            ResultSet info = db.foudTable(conn, parameter);
+          if (parameter != null)
+          {
+                DBActions db = new DBActions();
+                Connection conn = db.getConnection();
+                if(conn==null)
+                {
+                        out.print("Connection failed");
+                }
+                else
+                {
+                    out.print(" Yeah!");
+                }
+                 ResultSet info = db.foudTable(conn, parameter);
+                while(info.next())
+                {%>
+                <tr>  
+                     <td><%out.print(info.getString("nombre"));%></td>
+                     <td><%out.print(info.getString("titular"));%></td> 
+                     <td><%out.print(info.getString("ubica"));%></td>
+               </tr>
+            <%  }
+                
+          }
           %>
         <h1>TU MESA ESTA AQUÍ <%= parameter %></h1>
         <%  
-            while(info.next())
-            {%>
-            <tr>  
-                 <td><%out.print(info.getString("nombre"));%></td>
-                 <td><%out.print(info.getString("titular"));%></td> 
-                 <td><%out.print(info.getString("ubica"));%></td>
-           </tr>
+            if (parameter != null)
+            {
+               
+              <%  } %>
+            
           <% } %>
     </body>
 </html>
