@@ -46,7 +46,7 @@ public class DBActions {
             }
             
             //  Creamos un nuevo invitado
-            public boolean insertStudent(Connection conn,String nombre, String mesa, boolean dentro){
+            public boolean insertInvitados(Connection conn,String nombre, String mesa, boolean dentro){
                 boolean success = false;
                 try {
                     String query = " insert into invitado  (nombre, mesa, dentro)"
@@ -69,13 +69,14 @@ public class DBActions {
                 return success;
              }
             
-            public boolean removeStudent(Connection conn, Integer id){
+            // Borrando invitados
+            public boolean removeInvitados(Connection conn, String nombre){
                 boolean success = false;
                 try {    
 
-                    String query = "delete from students where idStudents = ?";
+                    String query = "delete from invitados where nombre = ?";
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setInt(1, id);
+                    preparedStmt.setString(1, nombre);
                     // execute the preparedstatement
                     preparedStmt.execute();
                    success = true;
@@ -86,15 +87,18 @@ public class DBActions {
                 }
                  return success;
             }
-            public boolean updateStudent(Connection conn, Integer id, String name, String address){
+            
+            // Actualizando Invitados
+            public boolean updateInvitados(Connection conn, String nombre, String mesa, boolean dentro){
                 boolean success = false;
                 try {    
-                    String query = "update students set name = ?, address = ? where idStudents = ?";
+                    String query = "update students set nombre = ?, mesa = ?, dentro = ? where nombre = ?";
 
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setString(1, name);
-                    preparedStmt.setString(2, address);
-                    preparedStmt.setInt(3, id);
+                    preparedStmt.setString(1, nombre);
+                    preparedStmt.setString(2, mesa);
+                    preparedStmt.setBoolean(3, dentro);
+                    preparedStmt.setString(1, nombre);
                     // execute the preparedstatement
                     preparedStmt.execute();
                    success = true;
