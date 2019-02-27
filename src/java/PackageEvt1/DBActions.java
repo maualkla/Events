@@ -110,6 +110,26 @@ public class DBActions {
                  return success;
             }
             
+            // Regresa la informacion del Invitado
+            public ResultSet foundInvitado(Connection conn, Integer id)
+            {
+                try
+                {
+                    Statement st = conn.createStatement();
+                    ResultSet info;
+                    String query = " select * from invitado where invitado_id = " + id;
+                    info = st.executeQuery(query);
+                    return info;
+                }
+                 catch(SQLException ex)
+                {
+                    Logger.getLogger(DBActions.class.getName()).log(Level.SEVERE, null, ex);
+                    return null;
+                }
+                        
+            }
+            
+            // Regresa la informacion de la mesa 
             public ResultSet foudTable(Connection conn, String mesa)
             {
                 try

@@ -44,7 +44,14 @@
                </tr>
             <%  }
                   }%>
-                  
+                  <div class="contenedor">
+                      <div class="title">
+                          
+                      </div>
+                      <div class="options">
+                          
+                      </div>
+                  </div>
                   <button class="boton" onclick="window.location.href = '/Events' "> Regresar </button>
      </body>
 </html>
