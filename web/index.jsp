@@ -28,11 +28,7 @@
        <%
         DBActions db = new DBActions();
         Connection conn = db.getConnection();
-        if(conn!=null)
-        {
-                 out.print("Connection successfully");
-        }
-        else
+        if(conn==null)
         {
                  out.print("Connection failed");
         }
