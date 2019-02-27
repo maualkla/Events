@@ -24,7 +24,7 @@
     </head>
     <body>
         <%  String parameter = request.getParameter("id"); %>
-        <h1>TU MESA ESTA AQUÍ <%= parameter %></h1>
+        
         <% 
           if (parameter != null)
           {
@@ -33,10 +33,6 @@
                 if(conn==null)
                 {
                         out.print("Connection failed");
-                }
-                else
-                {
-                    out.print(" Yeah!");
                 }
                  ResultSet info = db.foudTable(conn, parameter);
                 while(info.next())
