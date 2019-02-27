@@ -31,11 +31,12 @@ public class DBActions {
                }
             }
             
-            public ResultSet getStudents(Connection conn){
+            // Traemos todos los invitados
+            public ResultSet getInvitados(Connection conn){
                 try {
                     Statement st = conn.createStatement();
                     // execute the query, and get a java resultset
-                    ResultSet rs = st.executeQuery("Select * from students");
+                    ResultSet rs = st.executeQuery("Select * from invitado");
 
                     return rs;
                 } catch (SQLException ex) {
@@ -43,17 +44,19 @@ public class DBActions {
                     return null;
                 }
             }
-            public boolean insertStudent(Connection conn,Integer id, String name, String address){
+            
+            //  Creamos un nuevo invitado
+            public boolean insertStudent(Connection conn,String nombre, String mesa, boolean dentro){
                 boolean success = false;
                 try {
-                    String query = " insert into students (idStudents, Name, Address)"
+                    String query = " insert into invitado  (nombre, mesa, dentro)"
                             + " values (?, ?, ?)";
 
                     // create the mysql insert preparedstatement
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setInt (1, id);
-                    preparedStmt.setString (2, name);
-                    preparedStmt.setString (3, address);
+                    preparedStmt.setString(1, nombre);
+                    preparedStmt.setString (2, mesa);
+                    preparedStmt.setBoolean (3, dentro);
 
                     // execute the preparedstatement
                     preparedStmt.execute();
