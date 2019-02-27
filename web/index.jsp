@@ -17,7 +17,7 @@
         <style>
             body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}
             .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
-            .boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;}
+            .boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;cursor: pointer;margin:5px;}
             
         </style>
     </head>

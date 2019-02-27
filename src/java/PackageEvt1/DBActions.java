@@ -111,7 +111,7 @@ public class DBActions {
             }
             
             // Regresa la informacion del Invitado
-            public ResultSet foundInvitado(Connection conn, Integer id)
+            public ResultSet foundInvitado(Connection conn, String id)
             {
                 try
                 {

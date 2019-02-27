@@ -18,7 +18,7 @@
         <style>
            body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}
            .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
-           .boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;cursor: default;}
+           .boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;cursor: pointer;margin:5px;}
             
         </style>
     </head>
@@ -34,22 +34,35 @@
                 {
                         out.print("Connection failed");
                 }
-                 ResultSet info = db.foudTable(conn, parameter);
+                ResultSet info = db.foundInvitado(conn, parameter);
+                String nombre = "";
+                String mesa = "";
+                String dentro = "";
+                String nombreT = "";
+                String titular = "";
+                String ubica = "";
                 while(info.next())
-                {%>
-                <tr>  
-                     <td><%out.print(info.getString("nombre"));%></td>
-                     <td><%out.print(info.getString("titular"));%></td> 
-                     <td><%out.print(info.getString("ubica"));%></td>
-               </tr>
-            <%  }
-                  }%>
+                {
+                    nombre =  info.getString("nombre");
+                    mesa =  info.getString("mesa");
+                    dentro = info.getString("dentro");   
+                    break;
+                 }
+                ResultSet table = db.foudTable(conn, mesa);
+                while(info.next())
+                {
+                    nombreT =  info.getString("nombreT");
+                    titular =  info.getString("titular");
+                    ubica = info.getString("ubica");   
+                    break;
+                 }
+            }%>
                   <div class="contenedor">
                       <div class="title">
-                          
+                          Bienvenido
                       </div>
                       <div class="options">
-                          
+                          Content
                       </div>
                   </div>
                   <button class="boton" onclick="window.location.href = '/Events' "> Regresar </button>
