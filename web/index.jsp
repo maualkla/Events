@@ -4,6 +4,8 @@
     Author     : Mauricio E Alcala Lopez
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="PackageEvt1.DBActions"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="PackageEvt1.ConnectDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,8 +23,9 @@
         
         <h1>Events Main Content</h1>
         
-       <div class="conexion_status"> <%
-        ConnectDB db = new ConnectDB();
+       <div class="conexion_status"> 
+       <%
+        DBActions db = new DBActions();
         Connection conn = db.getConnection();
         if(conn!=null)
         {
@@ -44,7 +47,20 @@
            <div class="c-options">
                <button> Nuevo Invitado </button>
                <button> Eliminar Invitado </button>
+               <% 
+                   ResultSet invitados = db.getInvitados(conn);
+                   while(invitados.next())
+                   {%>
+                   <tr>
+                        <td><%out.print(invitados.getInt("invitado_id"));%></td>  
+                        <td><%out.print(invitados.getString("nombre"));%></td>
+                        <td><%out.print(invitados.getString("mesa"));%></td> 
+                        <td><%out.print(invitados.getString("dentro"));%></td>
+                  </tr>
+                  <% }
+               %>
            </div>
        </div>
+       
     </body>
 </html>
