@@ -17,6 +17,7 @@
         <style>
             body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}
             .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
+            .boton{background: #AFC5FF;}
             
         </style>
     </head>
@@ -42,8 +43,8 @@
                </form>
            </div>
            <div class="c-options">
-               <button> Nuevo Invitado </button>
-               <button> Eliminar Invitado </button>
+               <button class="boton"> Nuevo Invitado </button>
+               <button class="boton"> Eliminar Invitado </button>
            </div>
        </div>
        <% 
