@@ -4,7 +4,6 @@
     Author     : mauri
 --%>
 
-<%@page import="java.awt.SystemColor.info"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="PackageEvt1.DBActions"%>
 <%@page import="java.sql.Connection"%>
@@ -23,8 +22,9 @@
         </style>
     </head>
     <body>
+        <%  String parameter = request.getParameter("id"); %>
+        <h1>TU MESA ESTA AQUÍ <%= parameter %></h1>
         <% 
-           String parameter = request.getParameter("id");
           if (parameter != null)
           {
                 DBActions db = new DBActions();
@@ -49,13 +49,5 @@
                 
           }
           %>
-        <h1>TU MESA ESTA AQUÍ <%= parameter %></h1>
-        <%  
-            if (parameter != null)
-            {
-               
-              <%  } %>
-            
-          <% } %>
-    </body>
+     </body>
 </html>
