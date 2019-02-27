@@ -47,20 +47,20 @@
            <div class="c-options">
                <button> Nuevo Invitado </button>
                <button> Eliminar Invitado </button>
-               <% 
-                   ResultSet invitados = db.getInvitados(conn);
-                   while(invitados.next())
-                   {%>
-                   <tr>
-                        <td><%out.print(invitados.getInt("invitado_id"));%></td>  
-                        <td><%out.print(invitados.getString("nombre"));%></td>
-                        <td><%out.print(invitados.getString("mesa"));%></td> 
-                        <td><%out.print(invitados.getString("dentro"));%></td>
-                  </tr>
-                  <% }
-               %>
            </div>
        </div>
+       <% 
+            ResultSet invitados = db.getInvitados(conn);
+            while(invitados.next())
+            {%>
+            <tr>
+                 <td><%out.print(invitados.getInt("invitado_id"));%></td>  
+                 <td><%out.print(invitados.getString("nombre"));%></td>
+                 <td><%out.print(invitados.getString("mesa"));%></td> 
+                 <td><%out.print(invitados.getString("dentro"));%></td>
+           </tr>
+           <% }
+        %>
        
     </body>
 </html>
