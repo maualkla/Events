@@ -116,13 +116,8 @@ public class DBActions {
                 {
                     Statement st = conn.createStatement();
                     ResultSet  mesas ;
-                     String query =  "Select * from mesas where nombre = ? ";
-                    PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setString(1, mesa);
-                    
-
-                    // execute the preparedstatement
-                    mesas = st.preparedStmt.execute();
+                    String query =  "Select * from mesas where nombre = '" + mesa + "'  ";
+                    mesas = st.executeQuery(query);
                      return mesas;
                 }
                 catch(SQLException ex)

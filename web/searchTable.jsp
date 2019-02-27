@@ -21,6 +21,8 @@
     <body>
         <% 
            String parameter = request.getParameter("id");
+           
+           
           %>
         <h1>TU MESA ESTA AQUÍ <%= parameter %></h1>
     </body>
