@@ -7,8 +7,6 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="PackageEvt1.DBActions"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
-<%@page import="com.sun.jndi.toolkit.url.Uri"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
