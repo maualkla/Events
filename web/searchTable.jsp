@@ -27,8 +27,10 @@
         <%  DBActions db = new DBActions(); %>
         <%  Connection conn = db.getConnection(); %>
         <%   if(conn==null) { out.print("Connection failed");  } %>
-        <% ResultSet result = db.foundInvitado(conn, parameter); %>
-        
+        <% ResultSet invitado = db.foundInvitado(conn, parameter); %>
+        <% ResultSet table = db.foudTable(conn, parameter); %>
+        <% out.print(table); %>
+        <% out.print(invitado); %>
                   <div class="contenedor">
                       <div class="title">
                           Bienvenido <%= parameter %>

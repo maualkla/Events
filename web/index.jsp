@@ -38,6 +38,7 @@
        <div class="content">
            <div class="c-input">
                <form name="check" action="searchTable.jsp" method="POST">
+                   <p> TU NUMERO DE INVITADO </p>
                    <input type="text" name="id" value="" class="c-input">
                    <input type="submit" name="enviar" value="Buscar Mesa" class="boton">
                </form>

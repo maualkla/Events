@@ -117,7 +117,7 @@ public class DBActions {
                 {
                     Statement st = conn.createStatement();
                     ResultSet info;
-                    String query = " select * from invitado where invitado_id = " + id;
+                    String query = " select * from invitado where invitado_id = " + id + " OR nombre LIKE '%" + id + "%'";
                     info = st.executeQuery(query);
                     return info;
                 }
@@ -130,15 +130,24 @@ public class DBActions {
             }
             
             // Regresa la informacion de la mesa 
-            public ResultSet foudTable(Connection conn, String mesa)
+            public ResultSet foudTable(Connection conn, String id)
             {
                 try
                 {
+                    String mesa = "";
+                    Statement rs = conn.createStatement();
+                    ResultSet info;
+                    String query = " select * from invitado where invitado_id = " + id + " OR nombre LIKE '%" + id + "%'";
+                    info = rs.executeQuery(query);
+                    while (info.next())
+                    {
+                        mesa = info.getString("mesa");
+                    }
                     Statement st = conn.createStatement();
                     ResultSet  mesas ;
-                    String query =  "Select * from mesas where nombre = '" + mesa + "'  ";
-                    mesas = st.executeQuery(query);
-                     return mesas;
+                    String query2 =  "Select * from mesas where nombre = '" + mesa + "'  ";
+                    mesas = st.executeQuery(query2);
+                    return mesas;
                 }
                 catch(SQLException ex)
                 {
