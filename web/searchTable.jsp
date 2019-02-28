@@ -25,41 +25,9 @@
     <body>
         <%  String parameter = request.getParameter("id"); %>
         
-        <% 
-          if (parameter != null)
-          {
-                DBActions db = new DBActions();
-                Connection conn = db.getConnection();
-                if(conn==null)
-                {
-                        out.print("Connection failed");
-                }
-                ResultSet info = db.foundInvitado(conn, parameter);
-                String nombre = "";
-                String mesa = "";
-                String dentro = "";
-                String nombreT = "";
-                String titular = "";
-                String ubica = "";
-                while(info.next())
-                {
-                    nombre =  info.getString("nombre");
-                    mesa =  info.getString("mesa");
-                    dentro = info.getString("dentro");   
-                    break;
-                 }
-                ResultSet table = db.foudTable(conn, mesa);
-                while(info.next())
-                {
-                    nombreT =  info.getString("nombreT");
-                    titular =  info.getString("titular");
-                    ubica = info.getString("ubica");   
-                    break;
-                 }
-            }%>
                   <div class="contenedor">
                       <div class="title">
-                          Bienvenido
+                          Bienvenido <%= parameter %>
                       </div>
                       <div class="options">
                           Content
