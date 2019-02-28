@@ -24,6 +24,10 @@
     </head>
     <body>
         <%  String parameter = request.getParameter("id"); %>
+        <%  DBActions db = new DBActions(); %>
+        <%  Connection conn = db.getConnection(); %>
+        <%   if(conn==null) { out.print("Connection failed");  } %>
+        <% ResultSet result = db.foundInvitado(conn, parameter); %>
         
                   <div class="contenedor">
                       <div class="title">
