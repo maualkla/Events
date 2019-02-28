@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,9 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author mauri
  */
-@WebServlet(urlPatterns = {"/MainServlet"}, initParams = {
-    @WebInitParam(name = "invitado_id", value = "0")})
-public class MainServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/tuMesa"})
+public class tuMesa extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +36,10 @@ public class MainServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MainServlet</title>");            
+            out.println("<title>Servlet tuMesa</title>" + request.getParameter("invitado_id")); 
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MainServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet tuMesa at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

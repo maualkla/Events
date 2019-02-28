@@ -37,9 +37,9 @@
        </div>
        <div class="content">
            <div class="c-input">
-               <form name="check" action="${pageContext.request.contextPath}/MainServlet" method="POST">
+               <form name="check" action="${pageContext.request.contextPath}/tuMesa" method="POST">
                    <p> TU NUMERO DE INVITADO </p>
-                   <input type="text" name="id" value="" class="c-input">
+                   <input type="text" name="invitado_id" value="" class="c-input">
                    <input type="submit" name="enviar" value="Buscar Mesa" class="boton">
                </form>
            </div>
