@@ -18,6 +18,23 @@
         </style>
     </head>
     <body>
+        <% Integer x = 2;
+                if( request.getParameter("param") == null)
+                {
+                    x = 2;
+                }
+                else
+                {
+                    x = 1;
+                }
+                if (x == 1) 
+                {%>
+                   <p style='color: green; font-size: 200%;'>¡Invitado Creado! </p>
+              <%} 
+                    else
+                    { %>
+                     <p>  </p>
+              <%} %>
         <div class="contenedor">
             <div class="title">
                 Control de Invitados
