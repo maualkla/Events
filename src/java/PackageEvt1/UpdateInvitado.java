@@ -43,7 +43,7 @@ public class UpdateInvitado extends HttpServlet {
             {
                      out.print("Connection failed");
             }
-            out.print(invitado + " :: " + name+" ::: " +mesa+ " ::: QUE PEDO    =>");
+            out.print(conn + " ::: " + invitado + " :: " + name+" ::: " +mesa+ " ::: QUE PEDO    =>");
             boolean updt = db.updateInvitados(conn, invitado, name, mesa);
             out.print(updt);
            /*  if(updt)

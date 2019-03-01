@@ -90,17 +90,15 @@ public class DBActions {
             
             // Actualizando Invitados
             public boolean updateInvitados(Connection conn, String invitado_id, String nombre, String mesa ){
-                boolean success;
+                boolean success = false;
                 try {    
-                    String query = "update invitados set nombre = ?, mesa = ? where invitado_id = ?";
-
+                    String query = "UPDATE invitados SET nombre = ?, mesa = ? WHERE invitado_id = ?";
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
                     preparedStmt.setString(1, nombre);
                     preparedStmt.setString(2, mesa);
-                    preparedStmt.setInt(3, Integer.parseInt( invitado_id));
-                    // execute the preparedstatement
-                    preparedStmt.execute();
-                   success = true;
+                    preparedStmt.setInt(3,Integer.parseInt(invitado_id));
+                   success =  preparedStmt.execute();
+                   
                    conn.close();
                 } catch (SQLException ex) {
                     success = false;
