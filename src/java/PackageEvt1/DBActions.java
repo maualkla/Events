@@ -155,6 +155,33 @@ public class DBActions {
                     return null;
                 }
             }
+            // Regresa true or false cuando se hace el login
+            public boolean loginUser(Connection conn, String pass, String user)
+            {
+                try
+                {
+                    String name = null;
+                    boolean access = false;
+                    Statement rs = conn.createStatement();
+                    ResultSet info;
+                    String query = " select * from admin where user ='" + user + "' AND pass = '" + pass + "'";
+                    info = rs.executeQuery(query);
+                    while (info.next())
+                    {
+                        name = info.getString("nombre");
+                    }
+                    if (name != null)
+                    {
+                        access = true;
+                    }
+                    return access;
+                }
+                catch(SQLException ex)
+                {
+                    Logger.getLogger(DBActions.class.getName()).log(Level.SEVERE, null, ex);
+                    return false;
+                }
+            }
 
     public ResultSet foundInvitado(Connection conn, ResultSet invitado) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
