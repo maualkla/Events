@@ -36,16 +36,17 @@ public class UpdateInvitado extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
              DBActions db = new DBActions();
             Connection conn = db.getConnection();
-            String invitado_id = request.getParameter("invitado_id");
+            String invitado_id = request.getParameter("invitado");
             String name = request.getParameter("nombre");
             String mesa = request.getParameter("mesa");
-            String dentro = request.getParameter("dentro");
             if(conn==null)
             {
                      out.print("Connection failed");
             }
-            boolean updt = db.updateInvitados(conn, name, mesa, Boolean.valueOf(dentro));
-             if(updt)
+            out.print(invitado_id + " :: " + name+" ::: " +mesa+ " ::: QUE PEDO");
+            boolean updt = db.updateInvitados(conn, invitado_id, name, mesa);
+            out.print(updt);
+           /*  if(updt)
            {
                response.sendRedirect("/Events/InvitadosMain.jsp?updateinvitado=1");
            }

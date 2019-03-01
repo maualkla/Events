@@ -89,16 +89,15 @@ public class DBActions {
             }
             
             // Actualizando Invitados
-            public boolean updateInvitados(Connection conn, String nombre, String mesa, boolean dentro){
+            public boolean updateInvitados(Connection conn, String invitado_id, String nombre, String mesa ){
                 boolean success = false;
                 try {    
-                    String query = "update students set nombre = ?, mesa = ?, dentro = ? where nombre = ?";
+                    String query = "update students set nombre = ?, mesa = ? where invitado_id = ?";
 
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
                     preparedStmt.setString(1, nombre);
                     preparedStmt.setString(2, mesa);
-                    preparedStmt.setBoolean(3, dentro);
-                    preparedStmt.setString(1, nombre);
+                    preparedStmt.setString(4, invitado_id);
                     // execute the preparedstatement
                     preparedStmt.execute();
                    success = true;
