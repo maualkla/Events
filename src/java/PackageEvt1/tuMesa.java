@@ -61,8 +61,7 @@ public class tuMesa extends HttpServlet {
                     + " body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}"
                     + ".conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;} "
                     + ".boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;cursor: pointer;margin:5px;}"
-                    + "</style>"
-                    + "<p> ALV </p>");
+                    + "</style>");
             ResultSet b_invitado =  db.foundInvitado(conn, invitado);
             ResultSet b_mesa =  db.foudTable(conn, invitado); 
             String val1 = null, val2 = null, val3 = null, val4 = null, val5 = null;
@@ -78,7 +77,7 @@ public class tuMesa extends HttpServlet {
                 val5 = b_mesa.getString("descrip");
             }
             out.print(""
-                    + "<h1>Hola " + val1 + ", tu mesa esta a nombre de " + val3 + " y se encuentra " + val5 + "</h1>"
+                    + "<h1>" + val1 + "</h1><h3> Tu mesa esta a nombre de " + val3 + " y se encuentra " + val5 + "</h3>"
                     + "<p><img src=" + val4 + "'>"
                     + "<button class='boton' onclick='back()'> Regresar </button> "
                             + ""
