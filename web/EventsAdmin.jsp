@@ -21,7 +21,24 @@
         </style>
         <div class="container">
             <div class="c-title">
-                Primero accede por favor
+                <% Integer x = 2;
+                if( request.getParameter("error") == null)
+                {
+                    x = 2;
+                }
+                else
+                {
+                    x = 1;
+                }
+                if (x == 1) 
+                {%>
+                   <p style='color: red; font-size: 200%;'> Error, usuario o contraseña no validos </p>
+              <%} 
+                    else
+                    { %>
+                     <p> Primero accede por favor </p>
+              <%} %>
+                
             </div>
             <div class="c-content">
                 <form action="${pageContext.request.contextPath}/Login" method="POST">

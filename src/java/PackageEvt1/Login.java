@@ -51,7 +51,7 @@ public class Login extends HttpServlet {
            }
            else
            {
-              response.sendRedirect("EventsAdmin.jsp");
+              response.sendRedirect("EventsAdmin.jsp?error=1");
            }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
