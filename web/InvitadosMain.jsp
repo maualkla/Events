@@ -40,9 +40,9 @@
                 Control de Invitados
             </div>
             <div class="options">
-                <form action="" method="POST">
-                    <input type="text" class="entrada" value="" >
-                    <input type="submt" class="boton" value="Buscar Invitado">
+                <form action="${pageContext.request.contextPath}/SearchInvitado" method="POST">
+                    <input type="text" class="entrada" name="param" value="" >
+                    <input type="submit" class="boton" value="Buscar Invitado">
                 </form>
                 <button class="boton" onclick="window.location.href = 'NInvitado.jsp'"> Nuevo Invitado </button>
             </div>

@@ -28,8 +28,6 @@
                     <input class="entrada" type="text" value="" name="nombre" required>
                     <p> Mesa </p>
                     <input class="entrada" type="text" value="" name="mesa" required>
-                    <p> Dentro </p>
-                    <input type="checkbox" value="0" id="chk" >
                     <input type="submit" class="boton" value="Crear">
                 </form>
             </div>
