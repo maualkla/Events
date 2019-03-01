@@ -1,0 +1,143 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/02/2019, 10:16:40 PM
+    Author     : Mariana
+*/
+
+            body 
+            { 
+                font-family: sans-serif; 
+                text-align: center; 
+                font-size: 10px; 
+                color: #245A64;
+                overflow: hidden;
+                width: auto;
+                height: auto;
+            }
+            
+            a
+            {
+                color: #ffffff;
+                float: left;
+                font-size: 20px;
+                letter-spacing: 3px;
+                font-weight:bold;
+                margin-top: 12px;
+                margin-left: 20px;
+            }
+            .header
+            {
+                -webkit-box-shadow: 5px 15px 22px 5px rgba(5,4,5,1);
+                -moz-box-shadow: 5px 15px 22px 5px rgba(5,4,5,1);
+                box-shadow: 5px 15px 22px 5px rgba(5,4,5,1);
+                background-color: #000000;
+                z-index: 20;
+                width: 100%;
+                height: 40px;
+                top: 0;
+                right: -1px;
+                left: 0;
+                position: absolute;
+            }
+            
+            #video_background 
+            { 
+                position: absolute; 
+                bottom: 0px; 
+                right: -1px; 
+                min-width: 100%; 
+                min-height: 100%; 
+                width: auto; 
+                height: auto; 
+                z-index: -10; 
+                overflow: hidden; 
+            }
+            #video_pattern 
+            { 
+                background:#fff; 
+                position: fixed; 
+                opacity: 0.8; 
+                right: -1px;
+                left: 0px; 
+                top: 0px; 
+                width: 100%; 
+                height: 100%; 
+                z-index: 1; 
+            }
+            
+            .boton
+            {
+                background: #AFC5FF;
+                border-radius: 3px;
+                border: none;
+                color: white;
+                padding: 5px;
+                cursor: pointer;
+                margin-top: 12px;
+                float: right;
+                margin-right: 20px;
+            }
+            
+            .container
+            {
+                margin-top: 100px;
+                padding: 7px;
+                background-color: rgb(80,83,89,.8);
+                position:absolute;
+                height: 200px;
+                width: 90%;
+                margin-left: 4%;
+                border-radius: 5px;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+       
+            }
+            
+            .entrada
+            {
+                background-color:white; 
+                border-color:#ffffff; 
+                border-radius: 3px; 
+                border-style: solid; 
+                padding: 5px; 
+                margin: 5px;
+            }
+            
+            #invitado_form
+            {
+                float:left;
+                width: 60%;
+                margin-top: 5px;
+                font-size: 40px;
+                margin-left: 5%;
+            }
+            #boton_mesa
+            {
+                float: right;
+                margin-right: 5%;
+                width: 20%;
+                background: #AFC5FF;
+                border-radius: 3px;
+                border: none;
+                color: white;
+                padding: 5px;
+                cursor: pointer;
+                margin-top:15px;
+                font-size: 15px;
+            }
+            
+            p
+            {
+                margin-top: 20px;
+                font-size: 30px;
+                color: #ffffff;
+                
+                
+            }
+            
