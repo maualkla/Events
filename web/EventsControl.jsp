@@ -15,6 +15,11 @@
            .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
            .boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;cursor: pointer;margin:5px;}
            .entrada{background-color:white; border-color:#ffffff; border-radius: 3px; border-style: solid; padding: 5px; margin: 5px;} 
+           .alert-good{color: green;font-size: 200%;background-color: white;opacity: .7;padding:5px;border:none;border-radius:3px;}
+           .alert-bad{cursor:default;color: red;font-size: 200%;background-color: white;opacity: .6;padding:5px;border:none;border-radius:3px;}
+           .contenedor{border-color: white;border-radius: 3px;border-style: solid;width: 40%; margin-left: 30%;}
+           .title{font-size: 250%;padding: 20px;}
+           .options{padding: 20px;}
         </style>
     </head>
     <body>

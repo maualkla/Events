@@ -45,7 +45,7 @@ public class DeleteInvitado extends HttpServlet {
             boolean updt = false;
             updt = db.removeInvitados(conn, invitado);
             out.print(updt);
-           /*  if(updt)
+           if(updt)
            {
                response.sendRedirect("/Events/InvitadosMain.jsp?deleteinvitado=1");
            }

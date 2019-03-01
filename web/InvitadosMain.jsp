@@ -27,7 +27,21 @@
                          {
                              if(request.getParameter("error_updateinvitado") == null)
                              {
-                                 x = 10;
+                                 if(request.getParameter("deleteinvitado") == null)
+                                 {
+                                     if(request.getParameter("error_deleteinvitado") == null)
+                                     {
+                                         x = 10;
+                                     }
+                                     else
+                                     {
+                                         x = 6;
+                                     }
+                                 }
+                                 else
+                                 {
+                                     x = 5;
+                                 }
                              }
                              else
                              {
@@ -63,7 +77,13 @@
                      <%} else { 
                               if(x == 4) {%>
                               <p style="color: red; font-size: 200%;"> ¡No se actualizo el invitado!  </p>
-                              <% } } } } %>
+                              <%} else { 
+                              if(x == 5) {%>
+                               <p style='color: green; font-size: 200%;'>¡Invitado Eliminado! </p>
+                               <%} else { 
+                              if(x == 6) {%>
+                              <p style="color: red; font-size: 200%;"> ¡No se elimino el invitado!  </p>
+                              <% } } } }}} %>
               <%%>
         <div class="contenedor">
             <div class="title">
