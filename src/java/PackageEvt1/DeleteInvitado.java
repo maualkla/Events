@@ -7,6 +7,7 @@ package PackageEvt1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,14 +34,31 @@ public class DeleteInvitado extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+             DBActions db = new DBActions();
+            Connection conn = db.getConnection();
+            String invitado = request.getParameter("invitado_id");
+            if(conn==null)
+            {
+                     out.print("Connection failed");
+            }
+            out.print(conn + " ::: " + invitado + " :: " + " ::: QUE PEDO    =>");
+            boolean updt = db.removeInvitados(conn, invitado);
+            out.print(updt);
+           /*  if(updt)
+           {
+               response.sendRedirect("/Events/InvitadosMain.jsp?deleteinvitado=1");
+           }
+           else
+           {
+              response.sendRedirect("/Events/InvitadosMain.jsp?error_deleteinvitado=1");
+           }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteInvitado</title>");            
+            out.println("<title>Borrando Invitado</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DeleteInvitado at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/ConnectDB.java</file>
-            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/web/old.html</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/SearchInvitado.java</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/UpdateInvitado.java</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/CreateInvitado.java</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/web/InvitadosMain.jsp</file>
             <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/DBActions.java</file>
-            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/web/searchTable.jsp</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/web/NInvitado.jsp</file>
             <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/web/index.jsp</file>
-            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/ClassNotFoundExeption.java</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/web/EventsControl.jsp</file>
+            <file>file:/C:/Users/mauri/Documents/Escuela/UPA/Septimo/Plataformas%20Web/Events/src/java/PackageEvt1/tuMesa.java</file>
         </group>
     </open-files>
 </project-private>

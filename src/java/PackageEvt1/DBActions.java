@@ -70,13 +70,13 @@ public class DBActions {
              }
             
             // Borrando invitados
-            public boolean removeInvitados(Connection conn, String nombre){
+            public boolean removeInvitados(Connection conn, String identificador){
                 boolean success = false;
                 try {    
 
-                    String query = "delete from invitados where nombre = ?";
+                    String query = "delete from invitados where invitado_id = ?";
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setString(1, nombre);
+                    preparedStmt.setInt(1,Integer.parseInt( identificador ));
                     // execute the preparedstatement
                     preparedStmt.execute();
                    success = true;
