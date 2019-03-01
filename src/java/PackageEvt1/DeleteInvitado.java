@@ -41,8 +41,9 @@ public class DeleteInvitado extends HttpServlet {
             {
                      out.print("Connection failed");
             }
-            out.print(conn + " ::: " + invitado + " :: " + " ::: QUE PEDO    =>");
-            boolean updt = db.removeInvitados(conn, invitado);
+            out.print(conn + " ::: " + invitado +  " <==  PARAMS :: RESULT =>");
+            boolean updt = false;
+            updt = db.removeInvitados(conn, invitado);
             out.print(updt);
            /*  if(updt)
            {

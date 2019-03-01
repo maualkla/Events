@@ -74,12 +74,10 @@ public class DBActions {
                 boolean success = false;
                 try {    
 
-                    String query = "delete from invitados where invitado_id = ?";
+                    String query = "delete from invitados where invitado_id = "+identificador+"";
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setInt(1,Integer.parseInt( identificador ));
                     // execute the preparedstatement
-                    preparedStmt.execute();
-                   success = true;
+                   success =  preparedStmt.execute();
                    conn.close();
                 } catch (SQLException ex) {
                     success = false;
@@ -92,14 +90,10 @@ public class DBActions {
             public boolean updateInvitados(Connection conn, String invitado_id, String nombre, String mesa ){
                 boolean success = false;
                 try {    
-                    String query = "UPDATE invitados SET nombre = ?, mesa = ? WHERE invitado_id = ?";
+                    String query = "UPDATE invitados SET nombre = '"+nombre+"', mesa = '"+mesa+"' WHERE invitado_id = ?";
                     PreparedStatement preparedStmt = conn.prepareStatement(query);
-                    preparedStmt.setString(1, nombre);
-                    preparedStmt.setString(2, mesa);
-                    preparedStmt.setInt(3,Integer.parseInt(invitado_id));
+                    preparedStmt.setInt(1, Integer.parseInt(invitado_id));
                    success =  preparedStmt.execute();
-                   
-                   conn.close();
                 } catch (SQLException ex) {
                     success = false;
                     Logger.getLogger(DBActions.class.getName()).log(Level.SEVERE, null, ex);
