@@ -61,15 +61,35 @@ public class tuMesa extends HttpServlet {
                     + " body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}"
                     + ".conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;} "
                     + ".boton{background: #AFC5FF;border-radius: 3px;border: none;color: white;padding: 5px;cursor: pointer;margin:5px;}"
-                    + "</style>");
+                    + "</style>"
+                    + "<p> ALV </p>");
             ResultSet b_invitado =  db.foundInvitado(conn, invitado);
             ResultSet b_mesa =  db.foudTable(conn, invitado); 
-            String[] val = null;
+            String val1 = null, val2 = null, val3 = null, val4 = null, val5 = null;
             while(b_invitado.next())
             {
-                val[0] = b_invitado.getString("nombre");
+                val1 = b_invitado.getString("nombre");
             }
-            out.print(" <h1> "+ val[0] + "</h1>");
+            while(b_mesa.next())
+            {
+                val2 = b_mesa.getString("nombre");
+                val3 = b_mesa.getString("titular");
+                val4 = b_mesa.getString("ubica");
+                val5 = b_mesa.getString("descrip");
+            }
+            out.print(""
+                    + "<h1>Hola " + val1 + ", tu mesa esta a nombre de " + val3 + " y se encuentra " + val5 + "</h1>"
+                    + "<p><img src=" + val4 + "'>"
+                    + "<button class='boton' onclick='back()'> Regresar </button> "
+                            + ""
+                            + ""
+                            + "<script>"
+                            + "function back()"
+                            + "{"
+                                + "window.location.href = '/Events';"
+                            + "}"
+                            + "</script>");
+            
             out.println("</body>");
             out.println("</html>");
         } catch (SQLException ex) {
