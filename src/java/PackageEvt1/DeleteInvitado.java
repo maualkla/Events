@@ -7,7 +7,6 @@ package PackageEvt1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author mauri
  */
-@WebServlet(name = "UpdateInvitado", urlPatterns = {"/UpdateInvitado"})
-public class UpdateInvitado extends HttpServlet {
+@WebServlet(name = "DeleteInvitado", urlPatterns = {"/DeleteInvitado"})
+public class DeleteInvitado extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,33 +33,14 @@ public class UpdateInvitado extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-             DBActions db = new DBActions();
-            Connection conn = db.getConnection();
-            String invitado_id = request.getParameter("invitado_id");
-            String name = request.getParameter("nombre");
-            String mesa = request.getParameter("mesa");
-            String dentro = request.getParameter("dentro");
-            if(conn==null)
-            {
-                     out.print("Connection failed");
-            }
-            boolean updt = db.updateInvitados(conn, name, mesa, Boolean.valueOf(dentro));
-             if(updt)
-           {
-               response.sendRedirect("/Events/InvitadosMain.jsp?updateinvitado=1");
-           }
-           else
-           {
-              response.sendRedirect("/Events/InvitadosMain.jsp?error_updateinvitado=1");
-           }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Update Invitado</title>");            
+            out.println("<title>Servlet DeleteInvitado</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UpdateInvitado at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteInvitado at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

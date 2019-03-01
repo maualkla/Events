@@ -23,7 +23,7 @@
                 Nuevo Invitado
             </div>
             <div class="options">
-                <form action="${pageContext.request.contextPath}/CreateInvitado" method="POST">
+                <form action="CreateInvitado" method="POST">
                     <p> Nombre </p>
                     <input class="entrada" type="text" value="" name="nombre" required>
                     <p> Mesa </p>
@@ -32,6 +32,6 @@
                 </form>
             </div>
         </div>
-        <button class="boton" onclick="window.location.href = 'EventsControl' "> Salir a Inicio </button>
+        <button class="boton" onclick="window.location.href = 'EventsControl.jsp' "> Salir a Inicio </button>
     </body>
 </html>

@@ -18,10 +18,32 @@
         </style>
     </head>
     <body>
-        <% Integer x = 2;
-                if( request.getParameter("param") == null)
+        <% Integer x = 10;
+                if( request.getParameter("createinvitado") == null)
                 {
-                    x = 2;
+                    if(request.getParameter("error_createinvitado")== null)
+                    {
+                        if(request.getParameter("updateinvitado") == null)
+                         {
+                             if(request.getParameter("error_updateinvitado") == null)
+                             {
+                                 x = 10;
+                             }
+                             else
+                             {
+                                 x = 4;
+                             }
+                         }
+                        else
+                        {
+                            x = 3;
+                        }
+                       
+                    }
+                    else
+                    {
+                          x = 2;
+                    }
                 }
                 else
                 {
@@ -33,8 +55,16 @@
               <%} 
                     else
                     { %>
-                     <p>  </p>
-              <%} %>
+                    <% if (x == 2) { %> 
+                     <p style="color: red; font-size: 200%;"> ¡No se creo el invitado!  </p>
+                     <%} else { 
+                              if(x == 3) {%>
+                              <p style='color: green; font-size: 200%;'>¡Invitado Actualizado! </p>
+                     <%} else { 
+                              if(x == 4) {%>
+                              <p style="color: red; font-size: 200%;"> ¡No se actualizo el invitado!  </p>
+                              <% } } } } %>
+              <%%>
         <div class="contenedor">
             <div class="title">
                 Control de Invitados

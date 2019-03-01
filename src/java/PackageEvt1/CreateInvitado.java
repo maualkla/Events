@@ -46,11 +46,11 @@ public class CreateInvitado extends HttpServlet {
             boolean create = db.insertInvitados(conn, name, mesa, false);
             if(create)
            {
-               response.sendRedirect("/Events/InvitadosMain.jsp?param=1");
+               response.sendRedirect("/Events/InvitadosMain.jsp?createinvitado=1");
            }
            else
            {
-              response.sendRedirect("NInvitado.jsp?error=1");
+              response.sendRedirect("Events/InvitadosMain.jsp?error_createinvitado=1");
            }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");

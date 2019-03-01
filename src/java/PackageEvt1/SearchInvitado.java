@@ -74,22 +74,36 @@ public class SearchInvitado extends HttpServlet {
                     + " Modificar Invitado"
                     + "</div>"
                     + "<div class=\"options\">"
-                    + "<form action=\"${pageContext.request.contextPath}/UpdateInvitado\" method=\"POST\">"
+                    + "<form action='Events/UpdateInvitado' method=\"POST\">"
                      + " <p>ID de Invitado </p>"
-                    + "<input class=\"entrada\" type=\"text\" value=\""+invitado+"\" name=\"nombre\" disabled>"
+                    + "<input class=\"entrada\" type=\"text\" value=\""+invitado+"\" name=\"invitado_id\" disabled>"
                     + " <p> Nombre </p>"
                     + "<input class=\"entrada\" type=\"text\" value=\""+nombre+"\" name=\"nombre\" required>"
                     + "<p> Mesa </p>"
                     + "<input class=\"entrada\" type=\"text\" value=\""+mesa+"\" name=\"mesa\" required>"
                     + "<p> Dentro </p>"
                     + "<input type=\"checkbox\" value=\""+dentro+"\" id=\"chk\" >"
-                    + "<input type=\"submit\" class=\"boton\" value=\"Crear\">"
+                    + "<input type=\"submit\" class=\"boton\" value=\"Actualizar\">"
                     + "</form>"
                     + "</div>"
                     + " </div>"
-                    + "<button class=\"boton\" onclick=\"window.location.href = 'InvitadosMain.jsp' \"> Regresar a Control Invitados</button>");     
-                    
-                    
+                    + "<button class=\"boton\" onclick=\"window.location.href = 'InvitadosMain.jsp' \"> Regresar a Control Invitados</button>"
+                    + "<script>"
+                            + " function delete() {"
+                            + " var xhttp = new XMLHttpRequest();"
+                            + "xhttp.onreadystatechange = function() {"
+                            + " if (this.readyState == 4 && this.status == 200) {"
+                            + " window.location.href = 'InvitadosMain.jsp?param=1';"
+                            + "}"
+                            + "}"
+                            + "xhttp.open(\"GET\", \"Events/DeleteInvitado\", true);"
+                            + "  xhttp.send("+invitado+");"
+                            + "}"
+                            + "");     
+                   
+  
+  
+           
                     
                     
                     
