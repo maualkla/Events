@@ -1,6 +1,6 @@
 <%-- 
-    Document   : EventsControl
-    Created on : 28/02/2019, 08:41:27 PM
+    Document   : InvitadosMain
+    Created on : 28/02/2019, 09:49:27 PM
     Author     : mauri
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Events Control</title>
+        <title>Invitados Main</title>
         <style>
            body {background-color: #ECEFF1; font-family: sans-serif; text-align: center; font-size: 10px; color: #245A64;}
            .conexion_status{padding: 20px; background-color: #000000;border-radius: 5px;width: 20%;color:#ffffff;margin-left: 38.5%;margin-right: auto;}
@@ -20,16 +20,16 @@
     <body>
         <div class="contenedor">
             <div class="title">
-                Events Control
+                Control de Invitados
             </div>
             <div class="options">
-                <button class="boton" onclick="window.location.href = 'InvitadosMain.jsp'"> Invitados </button>
-                <button class="boton" onclick=""> Mesas </button>
+                <form action="" method="POST">
+                    <input type="text" class="entrada" value="" >
+                    <input type="submt" class="boton" value="Buscar Invitado">
+                </form>
+                <button class="boton" onclick="window.location.href = 'NInvitado.jsp'"> Nuevo Invitado </button>
             </div>
         </div>
-        <button class="boton" onclick="window.location.href = '/Events' "> Salir a Inicio </button>
+        <button class="boton" onclick="window.location.href = 'EventsControl.jsp' "> Regresar a Control </button>
     </body>
 </html>
-
-
- 
