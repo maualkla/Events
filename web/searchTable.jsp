@@ -34,7 +34,8 @@
                           Bienvenido <%= parameter %>
                       </div>
                       <div class="options">
-                          Content
+                          <button class="boton"> Invitados </button>
+                          <button class="boton"> Mesas </button>
                       </div>
                   </div>
                   <button class="boton" onclick="window.location.href = '/Events' "> Regresar </button>
